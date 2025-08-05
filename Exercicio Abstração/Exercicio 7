@@ -1,0 +1,66 @@
+class Quarto {
+    private int numero;
+    private String tipo;
+    private String status;
+
+    public Quarto(int numero, String tipo, String status) {
+        this.numero = numero;
+        this.tipo = tipo;
+        this.status = status;
+    }
+
+    public void exibirDados() {
+        System.out.println("Quarto:");
+        System.out.println("Número: " + numero);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Status: " + status);
+    }
+}
+
+class Hospede {
+    private String nome;
+    private String documento;
+
+    public Hospede(String nome, String documento) {
+        this.nome = nome;
+        this.documento = documento;
+    }
+
+    public void exibirDados() {
+        System.out.println("Hóspede:");
+        System.out.println("Nome: " + nome);
+        System.out.println("Documento: " + documento);
+    }
+}
+
+class Reserva {
+    private Quarto quarto;
+    private Hospede hospede;
+    private String dataEntrada;
+    private String dataSaida;
+
+    public Reserva(Quarto quarto, Hospede hospede, String dataEntrada, String dataSaida) {
+        this.quarto = quarto;
+        this.hospede = hospede;
+        this.dataEntrada = dataEntrada;
+        this.dataSaida = dataSaida;
+    }
+
+    public void exibirDados() {
+        System.out.println("Reserva:");
+        quarto.exibirDados();
+        hospede.exibirDados();
+        System.out.println("Data de Entrada: " + dataEntrada);
+        System.out.println("Data de Saída: " + dataSaida);
+    }
+}
+
+public class Hotel {
+    public static void main(String[] args) {
+        Quarto quarto = new Quarto(101, "Duplo", "Disponível");
+        Hospede hospede = new Hospede("Maria Silva", "12345678900");
+        Reserva reserva = new Reserva(quarto, hospede, "10/08/2025", "15/08/2025");
+
+        reserva.exibirDados();
+    }
+}

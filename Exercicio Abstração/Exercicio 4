@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+
+class Funcionario {
+    private String nome;
+    private Departamento departamento;
+
+    public Funcionario(String nome, Departamento departamento) {
+        this.nome = nome;
+        this.departamento = departamento;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+}
+
+class Departamento {
+    private String nome;
+    private ArrayList<Funcionario> funcionarios;
+
+    public Departamento(String nome) {
+        this.nome = nome;
+        this.funcionarios = new ArrayList<>();
+    }
+
+    public void adicionarFuncionario(Funcionario funcionario) {
+        funcionarios.add(funcionario);
+    }
+
+    public void exibirFuncionarios() {
+        System.out.println("Departamento: " + nome);
+        System.out.println("Funcionários:");
+        for (Funcionario f : funcionarios) {
+            System.out.println("- " + f.getNome());
+        }
+    }
+}
+
+public class Empresa {
+    public static void main(String[] args) {
+        Departamento ti = new Departamento("Tecnologia da Informação");
+
+        Funcionario f1 = new Funcionario("Carlos", ti);
+        Funcionario f2 = new Funcionario("Marina", ti);
+        Funcionario f3 = new Funcionario("Eduardo", ti);
+
+        ti.adicionarFuncionario(f1);
+        ti.adicionarFuncionario(f2);
+        ti.adicionarFuncionario(f3);
+
+        ti.exibirFuncionarios();
+    }
+}
