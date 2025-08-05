@@ -1,0 +1,54 @@
+public class Locadora {
+
+    static class Filme {
+        private String titulo;
+        private String genero;
+
+        public Filme(String titulo, String genero) {
+            this.titulo = titulo;
+            this.genero = genero;
+        }
+
+        public void exibirDetalhes() {
+            System.out.println("Filme: " + titulo + " | Gênero: " + genero);
+        }
+    }
+
+    static class Cliente {
+        private String nome;
+        private String cpf;
+
+        public Cliente(String nome, String cpf) {
+            this.nome = nome;
+            this.cpf = cpf;
+        }
+
+        public void mostrarCliente() {
+            System.out.println("Cliente: " + nome + " | CPF: " + cpf);
+        }
+    }
+
+    static class Locacao {
+        private String data;
+        private String tituloFilme;
+
+        public Locacao(String data, String tituloFilme) {
+            this.data = data;
+            this.tituloFilme = tituloFilme;
+        }
+
+        public void confirmarLocacao() {
+            System.out.println("Locação confirmada: " + tituloFilme + " | Data: " + data);
+        }
+    }
+
+    public static void main(String[] args) {
+        Filme filme = new Filme("O Poderoso Chefão", "Drama");
+        Cliente cliente = new Cliente("João Silva", "123.456.789-00");
+        Locacao locacao = new Locacao("04/08/2025", "O Poderoso Chefão");
+
+        filme.exibirDetalhes();
+        cliente.mostrarCliente();
+        locacao.confirmarLocacao();
+    }
+}
