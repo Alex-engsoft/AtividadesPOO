@@ -1,0 +1,54 @@
+public class LojaRoupas {
+
+    static class Produto {
+        private String nome;
+        private double preco;
+
+        public Produto(String nome, double preco) {
+            this.nome = nome;
+            this.preco = preco;
+        }
+
+        public void mostrarProduto() {
+            System.out.println("Produto: " + nome + " | Preço: R$ " + preco);
+        }
+    }
+
+    static class Cliente {
+        private String nome;
+        private String email;
+
+        public Cliente(String nome, String email) {
+            this.nome = nome;
+            this.email = email;
+        }
+
+        public void mostrarCliente() {
+            System.out.println("Cliente: " + nome + " | Email: " + email);
+        }
+    }
+
+    static class Pedido {
+        private String data;
+        private String produtoNome;
+
+        public Pedido(String data, String produtoNome) {
+            this.data = data;
+            this.produtoNome = produtoNome;
+        }
+
+        public void confirmarPedido() {
+            System.out.println("Pedido confirmado: " + produtoNome + " | Data: " + data);
+        }
+    }
+
+    public static void main(String[] args) {
+        Produto produto = new Produto("Camisa Polo", 89.90);
+        Cliente cliente = new Cliente("Ana Paula", "ana@email.com");
+        Pedido pedido = new Pedido("04/08/2025", "Camisa Polo");
+
+        produto.mostrarProduto();
+        cliente.mostrarCliente();
+        pedido.confirmarPedido();
+    }
+}
